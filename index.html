@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Food Ordering Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Food Ordering System</h1>
+            <div class="timer" id="timer">Time left: <span id="countdown">10:00</span></div>
+            <div class="theme-switcher">
+                <button data-theme="default">Default Theme</button>
+                <button data-theme="dark">Dark Theme</button>
+                <button data-theme="light">Light Theme</button>
+            </div>
+        </header>
+        <main>
+            <section class="menu">
+                <h2>Menu</h2>
+                <!-- List of Food Items (add more items as needed) -->
+                <div class="menu-item" data-price="10">
+                    <img src="burger.jpg" alt="Burger">
+                    <p>Burger - $10</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="15">
+                    <img src="pizza.jpg" alt="Pizza">
+                    <p>Pizza - $15</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="12">
+                    <img src="pasta.jpg" alt="Pasta">
+                    <p>Pasta - $12</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="8">
+                    <img src="salad.jpg" alt="Salad">
+                    <p>Salad - $8</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="20">
+                    <img src="steak.jpg" alt="Steak">
+                    <p>Steak - $20</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="5">
+                    <img src="sandwich.jpg" alt="Sandwich">
+                    <p>Sandwich - $5</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="7">
+                    <img src="sushi.jpg" alt="Sushi">
+                    <p>Sushi - $7</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                
+                <div class="menu-item" data-price="6">
+                    <img src="tacos.jpg" alt="Tacos">
+                    <p>Tacos - $6</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="10">
+                    <img src="chicken-wings.jpg" alt="Chicken Wings">
+                    <p>Chicken Wings - $10</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="18">
+                    <img src="shrimp.jpg" alt="Shrimp">
+                    <p>Shrimp - $18</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="9">
+                    <img src="soup.jpg" alt="Soup">
+                    <p>Soup - $9</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="14">
+                    <img src="ribs.jpg" alt="Ribs">
+                    <p>Ribs - $14</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="11">
+                    <img src="curry.jpg" alt="Curry">
+                    <p>Curry - $11</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="13">
+                    <img src="fried-rice.jpg" alt="Fried Rice">
+                    <p>Fried Rice - $13</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="16">
+                    <img src="seafood.jpg" alt="Seafood">
+                    <p>Seafood - $16</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="4">
+                    <img src="fruitcake.jpg" alt="fruitcake">
+                    <p>fruitcake - $4</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="6">
+                    <img src="nachos.jpg" alt="Nachos">
+                    <p>Nachos - $6</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="8">
+                    <img src="pancakes.jpg" alt="Pancakes">
+                    <p>Pancakes - $8</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-price="9">
+                    <img src="waffles.jpg" alt="Waffles">
+                    <p>Waffles - $9</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <!-- Add more food items similarly -->
+            </section>
+            <section class="cart">
+                <h2>Cart</h2>
+                <div class="cart-items"></div>
+                <div class="total">
+                    Total: $<span id="total-amount">0.00</span>
+                </div>
+                <button id="buy-now">Buy Now</button>
+            </section>
+        </main>
+        <footer>
+            <h2>Leave a Review</h2>
+            <div class="review-section">
+                <textarea id="review-text" placeholder="Write your review here..."></textarea>
+                <button id="submit-review">Submit Review</button>
+            </div>
+            <div class="reviews">
+                <h3>Reviews</h3>
+                <ul id="review-list"></ul>
+            </div>
+        </footer>
+
+        <!-- Order Confirmation Modal -->
+        <div id="order-confirmation" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="close-order-confirmation">&times;</span>
+                <h2>Order Confirmation</h2>
+                <div class="order-details">
+                    <h3>Your Order:</h3>
+                    <div id="order-items"></div>
+                    <div class="total">
+                        Total: $<span id="order-total-amount">0.00</span>
+                    </div>
+                </div>
+                <button id="confirm-payment">Confirm Payment</button>
+            </div>
+        </div>
+
+        <!-- Review Modal -->
+        <div id="review-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="close-review-modal">&times;</span>
+                <h2>Submit Review</h2>
+                <textarea id="modal-review-text" placeholder="Write your review here..."></textarea>
+                <button id="modal-submit-review">Submit Review</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
